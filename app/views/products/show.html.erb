@@ -1,0 +1,21 @@
+<div class = "page-header">
+	<h1>Product information</h1>
+</div>
+
+	<dl class=" row dl-horizontal">
+		<dt><strong>Type of product id </strong></dt>
+		<dd><%= @product.product_type_id %></dd>
+
+		<dt><strong>Name product  </strong></dt>
+		<dd><%= @product.product_name %></dd>
+
+		<dt><strong>Product's description </strong></dt>
+		<dd><%= @product.product_description %></dd>
+
+		<dt><strong>Cost </strong></dt>
+		<dd><%= @product.product_cost %></dd>
+	</dl>
+
+<div>
+	<%= link_to 'Back', product_type_products_path, :class=> "btn btn-mini"%>
+</div>

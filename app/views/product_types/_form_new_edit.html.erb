@@ -1,0 +1,17 @@
+
+<div class='row'>
+  <%= form_for @product_type, :html=>{:id=>'form_product_type'} do |f| %>
+  <fieldset>
+    <div>
+      <%= f.label "Type product name", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :product_type_name, :class => ' form-control' %>
+      </div>
+    </div>
+    <div class ="form-actions" style="margin-top: 3%" >
+      <%= f.submit "Create", :class => 'btn btn-primary' %>
+    </div>
+  </fieldset>
+<% end %>
+<%= link_to 'Back', product_types_path, :class => 'btn_back btn btn-mini'%>
+</div>
