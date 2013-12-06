@@ -6,41 +6,10 @@
   <%= link_to 'Back', product_types_path, :class => 'btn btn-mini'%>
 </div>
 
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-    	<th>ID type of product</th>
-      <th>Name product</th>
-      <th>Product's description</th>
-      <th>Cost</th>
-    </tr>
-  </thead>
-
-  <tbody>
-  <% @products.each do |product| %>
-    <tr>
-    	<td>
-        <%= product.product_type_id %>
-        <input type='hidden' class='product_type_id' id='<%=product.product_type_id%>'>
-      </td>
-      <td><%= product.product_name %></td>
-      <td><%= product.product_description %></td>
-      <td><%= product.product_cost %></td>
-      <td>
-        <%= link_to 'Show', product_type_product_path(@product_type,product),:class => 'btn btn-mini' %>
-      </td>
-      <td>
-        <%= link_to "Edit", edit_product_type_product_path(@product_type,product), :class => 'btn btn-mini' %>
-      </td>
-      <td >
-        <input id= "<%= product.id %>" class="delete_product btn btn-mini btn-danger" type = "button"  value="Delete">
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
-<div class =" col-lg-4 col-lg-offset-5 col-md-4 col-md-offset-5 col-xs-*">
+<div class="table-content">
+  <%= render "products" %>
+</div>
+<div class =" col-lg-4 col-lg-offset-5 col-md-4 col-md-offset-5 col-xs-* my_pagination">
   <%=will_paginate @products%>
 </div>
 

@@ -1,17 +1,16 @@
 <%= form_for  ([@product_type, @product]), :html=>{:id=>'form_new_edit_product'} do |f| %>
 
 <fieldset>
-  <span>VI DU. FILE NAY DA DC CHINH SUA</span>
   <div>
     <%= f.label :product_name, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :product_name, :class => ' form-control' %>
+      <%= f.text_field :product_name, :autofocus => true, :class => ' form-control' %>
     </div>
   </div>
   <div>
     <%= f.label :product_description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :product_description, :class => ' form-control', :size=>"160x160" %>
+      <%= f.text_area :product_description, :class => ' form-control', :size=>"100x10", :maxlength=>"1000"%>
     </div>
   </div>
   <div>

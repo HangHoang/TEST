@@ -1,5 +1,3 @@
-// <!-- neu script dat o tren lenh RoR, co nhung lenh thuc hien hanh dong cho 1 doi tuong trong RoR,
-// neu k dc dat trong ready=> trang se k load dc=> loi-->
 $(document).ajaxSend(function (e, xhr, options) {
   // lay thuoc tinh content trong the meta co ten la csft-token ga'n cho X-CSRF-Token
   xhr.setRequestHeader("X-CSRF-Token", $("meta[name='csrf-token']").attr('content'));
@@ -7,11 +5,9 @@ $(document).ajaxSend(function (e, xhr, options) {
 $(function() {
   $(".delete_product").click(function(e){
     e.preventDefault();
-    var field_DELETE = $(".delete_product").parent('td').parent('tr');
-
+    var field_DELETE = $(this).parent('td').parent('tr');
     var field_ID = $(this).attr("id");
     var field_id_parent=$(".product_type_id").attr("id");
-    // alert (field_id_parent);
     $( ".dialog" ).dialog({
       modal: true,
       buttons: {
@@ -21,8 +17,6 @@ $(function() {
             type: "Delete",
             success: function(){
               console.log(field_DELETE);
-              alert (field_ID);
-              alert (field_id_parent);
               field_DELETE.slideUp('slow', function() {
                 field_DELETE.remove();
                 $(".dialog").dialog("close");
