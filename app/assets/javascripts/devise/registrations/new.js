@@ -2,25 +2,29 @@
 $(function(){
   $("#form_signUp").validate({
   rules: {
-    "user[user_email]": {
+    "user[email]": {
       required: true,
       email: true
      },
-    "user[user_password]": {
-      required: true
-     },
-     "user[user_password_confirmation]": {
+    "user[password]": {
       required: true,
-      equalTo: "user[user_password]"
+      minlength: 8
+     },
+     "user[password_confirmation]": {
+      required: true,
+      equalTo: "user[password]"
      }
   },
   messages: {
-    "user[user_email]": {
+    "user[email]": {
       required: "Please enter email",
       email: "Please enter type of email: example@type.domain"
      },
-    "user[user_password]": "Please enter password",
-    "user[user_password_confirmation]": {
+    "user[password]": {
+      required: "Please enter password",
+      minlength: "Minlength of password is 8 charaters"
+     },
+    "user[password_confirmation]": {
       required: "Please enter password confirm",
       equalTo: "Password confirm equal password"
      }

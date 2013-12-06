@@ -2,13 +2,13 @@
 $(function(){
   $("#form_resend_confirm").validate({
   rules: {
-    "user[user_email]": {
+    "user[email]": {
       required: true,
       email: true
      }
   },
   messages: {
-    "user[user_email]": {
+    "user[email]": {
       required: "Please type your email",
       email: "Type of email: example@type.domain"
      }

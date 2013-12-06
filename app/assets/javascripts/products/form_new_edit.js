@@ -2,10 +2,10 @@ $(function(){
   $("#form_new_edit_product").validate({
   rules: {
     "product[product_name]": {
-      required: true
+      required: true,
     },
     "product[product_description]": {
-      maxlegth: 1000
+      minlength: 1000
     },
     "product[product_cost]": {
       required: true,
@@ -14,9 +14,11 @@ $(function(){
     }
     },
     messages: {
-      "product[product_name]": "Please enter product name.",
+      "product[product_name]": {
+        required:  "Please enter product name.",
+      },
       "product[product_description]": {
-        maxlegth: "Maximum of product's decription is 1000 characters."
+        minlength: "Maximum of product's decription is 1000 characters."
       },
       "product[product_cost]": {
         required: "Please enter product cost.",
@@ -25,3 +27,4 @@ $(function(){
     }
   });
 });
+

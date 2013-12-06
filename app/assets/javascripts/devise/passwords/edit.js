@@ -2,17 +2,17 @@
 $(function(){
   $("#form_change_password").validate({
   rules: {
-    "user[user_password]": {
+    "user[password]": {
       required: true
      },
-     "user[user_password_confirmation]": {
+     "user[password_confirmation]": {
       required: true,
-      equalTo: "user[user_password]"
+      equalTo: "user[password]"
      }
   },
   messages: {
-    "user[user_password]": "Please enter password",
-    "user[user_password_confirmation]": {
+    "user[password]": "Please enter password",
+    "user[password_confirmation]": {
       required: "Please enter password confirm",
       equalTo: "Password confirm equal password"
      }
