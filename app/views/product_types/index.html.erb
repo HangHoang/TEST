@@ -19,7 +19,7 @@
   <tbody>
   <% @product_types.each do |product_type| %>
     <tr>
-      <td><%= product_type.product_type_name %></td>
+      <td class="col-lg-6 col-md-6 col-xs-6"><%= product_type.product_type_name %></td>
       <td>
         <%= link_to 'Show', product_type_path(product_type),:class => 'btn btn-mini' %>
       </td>

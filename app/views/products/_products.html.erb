@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name product</th>
+      <th>Product's description</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.product_name %></td>
+      <td><%= product.product_description %></td>
+      <td><%= product.product_cost %></td>
+      <td>
+        <%= link_to 'Show', product_type_product_path(@product_type,product),:class => 'btn btn-mini' %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_product_type_product_path(@product_type,product), :class => 'btn btn-mini' %>
+      </td>
+      <td >
+        <input id= "<%= product.id %>" class="delete_product btn btn-mini btn-danger" type = "button"  value="Delete">
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
