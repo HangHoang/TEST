@@ -15,11 +15,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     render text: 'ok'
-  #   @product_type = ProductType.find(params[:product_type_id])
-		# @products = @product_type.products.paginate(page: params[:page],:per_page => 3)
-  #   respond_to do |format|
-  #   	format.js {render products: @products, product_type: @product_type}
-  #   end
   end
   def edit
     @product_type = ProductType.find(params[:product_type_id])
@@ -28,6 +23,10 @@ class ProductsController < ApplicationController
   def index
 		@product_type = ProductType.find(params[:product_type_id])
 		@products = @product_type.products.paginate(page: params[:page],:per_page => 10)
+		respond_to do |format|
+			format.html
+			format.xml { render xml: @products }
+		end
 	end
 	def update
 		@product = Product.find(params[:id])

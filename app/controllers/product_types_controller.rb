@@ -24,6 +24,10 @@ class ProductTypesController < ApplicationController
 
 	def index
 		@product_types = ProductType.paginate(page: params[:page],:per_page => 10)
+		respond_to do |format|
+			format.html
+			format.xml { render xml: @product_types }
+		end
 	end
 	def update
 		@product_types = ProductType.find(params[:id])
